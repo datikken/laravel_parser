@@ -52,6 +52,8 @@
 
         </tbody>
     </table>
-
-    @include('buttons.basic_btn',['text' => 'Parse all'])
+    <form action="{{ route('parse_resources') }}" method="GET">
+        @csrf
+        @include('buttons.basic_btn',['text' => 'Parse all'])
+    </form>
 </div>

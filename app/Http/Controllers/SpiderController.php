@@ -19,6 +19,8 @@ class SpiderController extends Controller
 
             $this->parse_resource($rsc->link, '.'.$rsc->class_list, '.'.$rsc->class_block, $classes_to_filter, $rsc->id);
         }
+
+        return redirect('/');
     }
 
     /**
@@ -44,7 +46,7 @@ class SpiderController extends Controller
             {
                 $description = trim(mb_strimwidth(preg_replace("/\s+/", " ", preg_replace("/\r|\n/", "", strip_tags($article[0]))), 0, 200,"..."));
 
-                Article::create([
+                Article::updateOrCreate([
                     'resource_id' => $resource_id,
                     'link' => $item['link'],
                     'title' => $item['title'],
