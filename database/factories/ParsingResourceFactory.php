@@ -26,7 +26,7 @@ class ParsingResourceFactory extends Factory
             'link' => 'https://www.rbc.ru/',
             'class_list'=> 'news-feed__item',
             'class_block' => 'l-col-main',
-            'classes_to_filter' => 'article__header__info-block,article__header__title,article__main-image,article__inline-item'
+            'classes_to_filter' => 'article__header__info-block,article__header__title,article__main-image,article__inline-item,article__padding-off'
         ];
     }
 }

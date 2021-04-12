@@ -37,6 +37,8 @@ class SpiderController extends Controller
         $crawler = $this->create_crawler($link);
         $list_items_links_with_title = $this->parse_list($crawler, $class_list);
 
+        dd($list_items_links_with_title);
+
         foreach($list_items_links_with_title as $item)
         {
             $crawler = $this->create_crawler($item['link']);
@@ -79,9 +81,8 @@ class SpiderController extends Controller
     public function parse_list($crawler, $classToFind)
     {
         return $crawler->filter($classToFind)->each(function($node) {
-
             $link = $node->filter('a')->attr('href');
-            $title = $node->filter('span')->text();
+            $title = $node->last()->text();
 
             return compact('link', 'title');
         });

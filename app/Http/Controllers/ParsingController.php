@@ -12,7 +12,7 @@ class ParsingController extends Controller
     public function index()
     {
         $rsc = ParsingResource::all();
-        $articles = Article::all();
+        $articles = Article::all()->reverse()->values();
 
         return view('welcome', ['resources' => $rsc, 'articles' => $articles]);
     }

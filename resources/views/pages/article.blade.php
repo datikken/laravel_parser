@@ -7,13 +7,9 @@
 
         <p class="text-grey mb-3">{{ $article->created_at }}</p>
 
-        <h2 class="font-sans font-thin leading-normal mb-4">
-            {{ $article->description }}
-        </h2>
-
-        <p class="text-grey-darkest mb-6 leading-tight">
+        <div class="text-grey-darkest mb-6 leading-tight">
             @php  echo $article->content; @endphp
-        </p>
+        </div>
     </div>
 
 @endsection
