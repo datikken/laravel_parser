@@ -12,6 +12,7 @@ For example: news-list, article-content, banner, article_date-item
 To run project locally:
 
 - composer install
+- cp .env.example .env  
 - php artisan key:generate
 - php artisan migrate
 - php artisan db:seed
