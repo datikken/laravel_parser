@@ -37,8 +37,6 @@ class SpiderController extends Controller
         $crawler = $this->create_crawler($link);
         $list_items_links_with_title = $this->parse_list($crawler, $class_list);
 
-        dd($list_items_links_with_title);
-
         foreach($list_items_links_with_title as $item)
         {
             $crawler = $this->create_crawler($item['link']);
