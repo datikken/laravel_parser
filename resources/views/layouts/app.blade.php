@@ -14,7 +14,9 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
-<main class="mx-6 my-6">
+@include('navbar.navbar')
+
+<main class="mx-6 my-6 overflow-x-hidden">
     @yield('center')
 </main>
 
